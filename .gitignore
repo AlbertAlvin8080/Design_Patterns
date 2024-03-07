@@ -42,7 +42,7 @@ _GITIGNORE/
 
 JPA_Hibernate/first-test/mysql-data/
 **/mysql-data/
-# */*/*/mysql-data/
+
 
 **/grafana-storage/
 
