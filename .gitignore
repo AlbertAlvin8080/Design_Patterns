@@ -44,6 +44,7 @@ JPA_Hibernate/first-test/mysql-data/
 **/mysql-data/
 
 **/.idea/
+**/.vscode/
 
 **/grafana-storage/
 
