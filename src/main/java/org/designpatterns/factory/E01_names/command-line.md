@@ -3,7 +3,7 @@ How to run in command line:
 * Open a terminal inside E01_names/ folder.
 * run:
 ```bash
-javac -d bin .\E01Test.java .\factory_contract\*.java .\factory_instances\*.java .\fullname\*.java
+javac -d bin .\E01Test.java .\factory_contract\*.java .\factory_instance\*.java .\fullname\*.java
 ```
 ```bash
 cd bin

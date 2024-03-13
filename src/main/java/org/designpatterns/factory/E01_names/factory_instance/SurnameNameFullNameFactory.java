@@ -1,9 +1,9 @@
-package org.designpatterns.factory.E01_names.factory_instances;
+package org.designpatterns.factory.E01_names.factory_instance;
 
 import org.designpatterns.factory.E01_names.factory_contract.FullNameFactory;
 import org.designpatterns.factory.E01_names.fullname.FullName;
 
-public class SurnameNameFactory implements FullNameFactory {
+public class SurnameNameFullNameFactory implements FullNameFactory {
     @Override
     public FullName getFullName(String names) {
         final String[] split = names.split(",\\s+");
