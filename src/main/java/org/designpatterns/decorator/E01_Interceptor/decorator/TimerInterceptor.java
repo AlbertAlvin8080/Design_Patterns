@@ -13,6 +13,6 @@ public class TimerInterceptor extends Interceptor {
         final long start = System.currentTimeMillis();
         super.job.doJob();
         final long end = System.currentTimeMillis();
-        System.out.printf("Elapsed time: %sms%n", (end - start));
+        System.out.printf("Elapsed time: %sms %n", (end - start));
     }
 }
