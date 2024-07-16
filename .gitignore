@@ -13,11 +13,11 @@ target/
 *.ipr
 
 ### Eclipse ###
-.apt_generated
-.classpath
+**/.apt_generated/
+**/.classpath
 .factorypath
-.project
-.settings
+**/.project
+**/.settings/
 .springBeans
 .sts4-cache
 
@@ -45,14 +45,19 @@ JPA_Hibernate/first-test/mysql-data/
 
 **/.idea/
 **/.vscode/
+**/.vs
 
 **/grafana-storage/
 
-JSF/*/target/
-JSF/*/out/
+# JSF/*/target/
+# JSF/*/out/
 
-# **/target/
-# **/out/
+**/target/
+**/out/
+
+**/*.out
+
+**/mongodb_data/
 
 # C/*/*.exe
 # C/*.exe
@@ -60,5 +65,33 @@ JSF/*/out/
 
 **/node_modules/
 
+*/**/.gitignore
+
+# VSCODE
+**/x64/
+**/x86/
+**/.cproject
+**/.vs
+**/_Dependencies/
+**/*.sln
+**/*.vcxproj
+**/*.vcxproj.filters
+**/*.vcxproj.user
+**/*.h.gch # compiled header files
+
+**/*.class
+
+**/.metadata
+
+**/.venv
+**/__pycache__
+**/.pytest_cache
+
+**/client.keystore
+**/client.truststore
+**/server.keystore
+**/server.truststore
+
 -- TESTING --
 **/*.madmoiselle
+# TESTING COPY SH
