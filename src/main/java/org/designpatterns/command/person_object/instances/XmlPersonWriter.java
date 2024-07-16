@@ -8,17 +8,10 @@ import java.io.IOException;
 
 public class XmlPersonWriter implements PersonCommandI
 {
-    private static XmlMapper MAPPER = new XmlMapper();
-    private Person person;
-
-
-    public void setPerson(Person person)
-    {
-        this.person = person;
-    }
+    private final XmlMapper MAPPER = new XmlMapper();
 
     @Override
-    public void execute()
+    public void execute(Person person)
     {
         try
         {

@@ -9,15 +9,9 @@ import java.io.IOException;
 public class JsonPersonWriter implements PersonCommandI
 {
     private final ObjectMapper MAPPER = new ObjectMapper();
-    private Person person;
-
-    public void setPerson(Person person)
-    {
-        this.person = person;
-    }
 
     @Override
-    public void execute()
+    public void execute(Person person)
     {
         try
         {

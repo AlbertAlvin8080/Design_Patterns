@@ -9,17 +9,11 @@ import java.io.IOException;
 
 public class CsvPersonWriter implements PersonCommandI
 {
-    private static CsvMapper MAPPER = new CsvMapper();
-    private static CsvSchema SCHEMA = MAPPER.schemaFor(Person.class).withHeader();
-    private Person person;
-
-    public void setPerson(Person person)
-    {
-        this.person = person;
-    }
+    private final CsvMapper MAPPER = new CsvMapper();
+    private final CsvSchema SCHEMA = MAPPER.schemaFor(Person.class).withHeader();
 
     @Override
-    public void execute()
+    public void execute(Person person)
     {
         try
         {

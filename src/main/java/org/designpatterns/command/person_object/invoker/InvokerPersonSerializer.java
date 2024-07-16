@@ -1,41 +1,35 @@
 package org.designpatterns.command.person_object.invoker;
 
 import org.designpatterns.command.person_object.contract.PersonCommandI;
+import org.designpatterns.command.person_object.instances.Person;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 public class InvokerPersonSerializer
 {
-    private final List<PersonCommandI> commandList;
+    private final Map<String, PersonCommandI> map;
 
-    public InvokerPersonSerializer()
+    public InvokerPersonSerializer(Map<String, PersonCommandI> map)
     {
-        this.commandList = new ArrayList<>();
+        this.map = map;
     }
 
-    public void addCommand(PersonCommandI commandI)
+    public void addCommand(String type, PersonCommandI personCommandI)
     {
-        commandList.add(commandI);
+        map.put(type, personCommandI);
     }
 
-    public void removeCommand(int idx)
+    public void executeCommand(String format, Person person)
     {
-        if (idx >= 0 && idx < commandList.size())
-        {
-            commandList.remove(idx);
-            return;
-        }
-        throw new IndexOutOfBoundsException("Invalid index for command list.");
+        final PersonCommandI personCommandI = map.get(format);
+        if (personCommandI == null)
+            throw new IllegalArgumentException("The provided key does not have any command.");
+
+        personCommandI.execute(person);
     }
 
-    public void executeCommand(int idx)
+    public void executeAllCommands(Person person)
     {
-        if (idx >= 0 && idx < commandList.size())
-        {
-            commandList.get(idx).execute();
-            return;
-        }
-        throw new IndexOutOfBoundsException("Invalid index for command list.");
+        map.forEach((k, v) -> v.execute(person));
     }
 }
